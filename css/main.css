@@ -1,0 +1,660 @@
+/* 
+    CSS Guide 
+
+    1.  General Styles
+    2.  Main Nav
+    3.  Main Hero Image
+    4.  Product Gallery (index.html)
+    5.  What Makes Burple Special (index.html)
+    6.  Contact Form (index.html)
+    7.  Matching Game (for-fun.html)
+    8.  Colouring Pages (for-fun.html)
+    9.  About Us (our-story.html)
+    10. Our Star Ingredients (our-story.html)
+    11. Footer
+    12. Custom Queries
+    13. Tablet Queries
+ */
+
+
+/* 1.  General Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+}
+
+.close-btn {
+  display: none;
+}
+
+/* 2.  Main Nav */
+
+header {
+  padding: 20px 0;
+}
+
+#burger {
+    display: none;
+  }
+
+.burger-menu-class {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#burger-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+#burger-menu li a:hover {
+  text-decoration: underline;
+}
+
+header.grid-con {
+  align-items: center;
+}
+
+header.grid-con > * {
+  grid-row: 1;
+}
+
+header .col-start-11,
+header .col-start-12 {
+  display: none;
+}
+
+
+  header .col-start-11,
+  header .col-start-12 {
+    display: block;
+    justify-self: end;
+  }
+
+  header .col-start-11 img,
+  header .col-start-12 img {
+    width: 32px;
+    height: auto;
+    display: block;
+  }
+
+/* 3.  Main Hero Image */
+
+.about-hero {
+  background-image: url("../images/pexels-yankrukov-8613319.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 400px;
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+} 
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-title {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  max-width: 16ch;
+  line-height: 1.15;
+  text-shadow: 
+    0 4px 12px rgba(0,0,0,0.45),
+    0 2px 4px rgba(0,0,0,0.35);
+}
+
+ /* 4.  Product Gallery */
+
+.product-grid {
+  margin-top: 32px;
+  row-gap: 28px;
+}
+
+.product-tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-tile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #9D79B9;
+  min-height: 100px;
+}
+
+.product-tile-img img {
+  width: 100px; 
+  height: 100px;
+  display: block;
+}
+
+.product-tile-cta {
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.product-tile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 72px;
+  border-radius: 20px;
+  background: #327D25;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14.4px;
+  line-height: 1.05;
+  text-align: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.boxes-section {
+  margin-top: 80px;
+  row-gap: 30px;
+}
+
+.grid-box {
+text-decoration: none;
+gap: 20px;
+}
+
+.full-width-grid-con > .grid-con {
+  grid-column: 1 / -1;
+}
+
+
+.icon-box {
+  background: #9D79B9;
+  height: 260px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+}
+
+.page-tile-cta {
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.page-tile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 72px;
+  border-radius: 20px;
+  background:#327D25;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14.4px;
+  line-height: 1.05;
+  text-align: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.close-btn-product {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.lightbox {
+    width: 100vw; 
+    height: 100vh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2;
+    display:none;
+    background-repeat: no-repeat;
+    background-size: 67vh; 
+    background-position: 40px bottom;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.lightbox:target {
+   display: block;
+   opacity: 1;
+}
+
+.lightbox article {
+    margin-left: 40%;
+    margin-top: 50px;
+    width: 400px;
+    color: white;
+}
+
+ /* 5.  What Makes Burple Special */
+
+.what-makes-burple-special {
+  margin-bottom: 24px;
+}
+
+/* 6.  Contact Form */
+
+form {
+  display: block;
+}
+
+#contact-form {
+  max-width: 300px;
+  margin: 50px auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  width: 100%;
+}
+
+
+#contact-form.contact {
+  max-width: 340px;
+  margin: 40px auto;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.contact-field {
+  margin: 18px 0;
+}
+
+.contact-field label {
+  display: block;
+  font-weight: 700;
+  font-size: 14.4px;
+  margin: 0 0 8px 10px;
+  color: black;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  background: white;
+  padding: 14px 16px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 22px;
+  border-color: #662D91;
+  box-shadow: 0 4px 0 #662D91;
+}
+
+.contact-field textarea {
+  border-radius: 22px;
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.35;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #662D91;
+  box-shadow: 0 8px 0 #662D91;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-left: auto;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #6b2aa6;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(118, 54, 168, 0.55);
+}
+
+/* 7.  Matching Game */
+
+.matching-game-section {
+  margin-top: 80px;
+  row-gap: 40px;
+}
+
+.matching-game-section h2 {
+  margin-bottom: 5px;
+}
+
+.matching-game-section h3 {
+  margin-bottom: 40px;
+}
+
+.cow {
+  cursor: grab;
+  z-index: 1;
+}
+
+ /* 8.  Colouring Pages */
+
+ .colouring-section {
+  margin-top: 80px;
+  row-gap: 40px;
+}
+
+/* 9.  About Us */
+
+.our-story-text {
+  padding: 20px;
+}
+
+.our-story-headings {
+  padding: 20px;
+}
+
+/* 10. Our Star Ingredients */
+
+.mobile-text {
+  display: block;
+}
+
+.tablet-text {
+  display: none;
+}
+
+.ingredients-section {
+  margin-top: 60px;
+}
+
+.ingredients-section h2 {
+  margin-bottom: 28px;
+}
+
+.ingredient-item {
+  margin-bottom: 28px;
+}
+
+.ingredient-text h3 {
+  margin: 14px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ingredient-text p {
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* 11. Footer */
+
+footer {
+  margin-top: 75px;
+  background-color: #662D91;
+}
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  padding: 48px 0 32px;
+  overflow: hidden;
+}
+
+.site-footer-inner {
+  position: relative;
+  z-index: 1;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.footer-logo {
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.footer-logo > img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  width: auto;
+  margin-top: 0;
+}
+
+
+.footer-social img {
+  width: 22px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-footer h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer li {
+  margin: 8px 0;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer-copyright {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 40px 0 0;
+  padding: 0 15px;
+  font-size: 14px;
+  color: white;
+}
+
+/* 12. Custom Queries */
+
+@media (max-width: 768px) {
+  .desk-row-1 { grid-row: 1; }
+  .desk-row-2 { grid-row: 2; }
+  .footer-logo { grid-row: 1 / span 2; }
+
+  header .col-start-11,
+  header .col-start-12 {
+    display: none;
+  }
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+}
+
+  nav {
+    order: 2;
+  }
+
+  #burger {
+    display: flex;
+  }
+
+  #burger img {
+  display: block;
+  width: 32px;
+  height: auto;
+  margin-left: auto;
+}
+
+#burger-menu li a {
+  color: white;
+}
+
+.burger-menu-class {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background: #9D79B9;
+    z-index: 10;
+    flex-direction: column;
+    padding-top: 60px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+ .burger-menu-class.active {
+    transform: translateX(0);
+  }
+
+  .about-hero {
+    min-height: 520px;
+  }
+
+  .about-hero-title {
+    font-size: 24px;
+  }
+
+  .footer-logo {
+    grid-row: auto;
+    align-items: center;
+  }
+
+  .footer-logo > img {
+    width: 150px;
+  }
+
+  .site-footer-inner {
+    row-gap: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+
+    .about-hero {
+    min-height: 320px;
+  }
+
+  .footer-logo {
+    grid-row: auto;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    max-width: 150px;
+  }
+
+  .site-footer-inner {
+    row-gap: 30px;
+  }
+   .ingredient-item {
+    text-align: left;
+  }
+
+  .product-tile-img {
+    margin-bottom: 12px;
+  }
+
+  .ingredient-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    column-gap: 28px;
+    margin-bottom: 42px;
+  }
+
+  .product-tile-img {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 0;
+  }
+
+  .product-tile-img img {
+    width: 125px;
+  }
+
+  .ingredient-text h3 {
+    display: none;
+  }
+
+  .mobile-text {
+    display: none;
+  }
+
+  .tablet-text {
+    display: block;
+    max-width: 430px;
+  }
+}
